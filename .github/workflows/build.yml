@@ -82,12 +82,12 @@ jobs:
           ${{ env.CURL }} -o antifilternetworkcommunity.txt https://antifilter.network/downloads/custom.lst
           ${{ env.CURL }} -o cdn.lst https://raw.githubusercontent.com/mansourjabin/cdn-ip-database/refs/heads/main/data/cdn.lst
           ${{ env.CURL }} -o merged.sum https://raw.githubusercontent.com/PentiumB/CDN-RuleSet/refs/heads/main/release/merged.sum
-          ${{ env.CURL }} -o geolite_ru.lst https://raw.githubusercontent.com/hydraponique/countrydb/refs/heads/main/output/geolite2-geo-whois-asn-country-ipv4/ru.lst
-          ${{ env.CURL }} -o geolite_by.lst https://raw.githubusercontent.com/hydraponique/countrydb/refs/heads/main/output/geolite2-geo-whois-asn-country-ipv4/by.lst
+          ${{ env.CURL }} -o geolite_ru.lst https://raw.githubusercontent.com/losogudok/countrydb/refs/heads/main/output/geolite2-geo-whois-asn-country-ipv4/ru.lst
+          ${{ env.CURL }} -o geolite_by.lst https://raw.githubusercontent.com/losogudok/countrydb/refs/heads/main/output/geolite2-geo-whois-asn-country-ipv4/by.lst
           ${{ env.CURL }} -o ipinfo_ru.lst https://raw.githubusercontent.com/Davoyan/ipinfo/refs/heads/main/geo/geoip/ru.lst
           ${{ env.CURL }} -o ipinfo_by.lst https://raw.githubusercontent.com/Davoyan/ipinfo/refs/heads/main/geo/geoip/by.lst
-          ${{ env.CURL }} -o dbip_ru.lst https://raw.githubusercontent.com/hydraponique/countrydb/refs/heads/main/output/dbip-country-ipv4/ru.lst
-          ${{ env.CURL }} -o dbip_by.lst https://raw.githubusercontent.com/hydraponique/countrydb/refs/heads/main/output/dbip-country-ipv4/by.lst
+          ${{ env.CURL }} -o dbip_ru.lst https://raw.githubusercontent.com/losogudok/countrydb/refs/heads/main/output/dbip-country-ipv4/ru.lst
+          ${{ env.CURL }} -o dbip_by.lst https://raw.githubusercontent.com/losogudok/countrydb/refs/heads/main/output/dbip-country-ipv4/by.lst
           ${{ env.CURL }} -o /tmp/GeoLite2-ASN-CSV.zip https://dl.netsyms.net/dbs/geolite2/GeoLite2-ASN-CSV.zip
           unzip -j /tmp/GeoLite2-ASN-CSV.zip '*/GeoLite2-ASN-Blocks-*.csv' -d ./geolite2
           ls -l ./geolite2/
@@ -131,16 +131,16 @@ jobs:
         run: |
           cd release || exit 1
           git init
-          git config --local user.name "hydraponique"
-          git config --local user.email "hydraponique@users.noreply.github.com"
+          git config --local user.name "losogudok"
+          git config --local user.email "losogudok@users.noreply.github.com"
           git checkout -b release
           git add -A
           git commit -m "Release ${{ env.DAILY_TAG }}"
           git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f -u origin release
           cd .. || exit 1
-          git config --local user.name "hydraponique"
-          git config --local user.email "hydraponique@users.noreply.github.com"
+          git config --local user.name "losogudok"
+          git config --local user.email "losogudok@users.noreply.github.com"
           git checkout master
           git add release/
           git commit -m "Release ${{ env.DAILY_TAG }}" || echo "No changes to commit"
@@ -191,16 +191,16 @@ jobs:
         run: |
           cd release || exit 1
           git init
-          git config --local user.name "hydraponique"
-          git config --local user.email "hydraponique@users.noreply.github.com"
+          git config --local user.name "losogudok"
+          git config --local user.email "losogudok@users.noreply.github.com"
           git checkout -b test-release
           git add -A
           git commit -m "Test Release $(date -u +%Y%m%d%H%M)"
           git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f -u origin test-release
           cd .. || exit 1
-          git config --local user.name "hydraponique"
-          git config --local user.email "hydraponique@users.noreply.github.com"
+          git config --local user.name "losogudok"
+          git config --local user.email "losogudok@users.noreply.github.com"
           git checkout -B test
           git add release/
           git commit -m "Test Release $(date -u +%Y%m%d%H%M)" || echo "No changes to commit"
@@ -222,6 +222,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.PAT_FOR_ROUTING }}
-          repository: hydraponique/roscomvpn-routing
+          repository: losogudok/freemanvpn-routing
           event-type: update-routing-configs
           
