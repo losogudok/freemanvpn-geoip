@@ -195,15 +195,6 @@
       "action": "remove",
       "args": {
         "name": "direct",
-        "uri": "./antifilternetworkcommunity.txt",
-        "onlyIPType": "ipv4"
-      }
-    },
-    {
-      "type": "text",
-      "action": "remove",
-      "args": {
-        "name": "direct",
         "uri": "./cdn.lst",
         "onlyIPType": "ipv4"
       }
@@ -277,6 +268,15 @@
           "0.0.0.0/8",
           "::/128"
         ]
+      }
+    },
+    {
+      "type": "text",
+      "action": "add",
+      "args": {
+        "name": "direct",
+        "uri": "./CUSTOM-FIX-ADD.txt",
+        "onlyIPType": "ipv4"
       }
     }
   ],
