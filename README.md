@@ -18,7 +18,7 @@
 **Генерирует актуальный `geoip.dat` и рулсеты для Mihomo/sing-box**
 **с "хирургической" фильтрацией всех нужных CIDR РФ/РБ**
 
-Три категории: `direct` · `whitelist` · `private`
+Четыре категории: `direct` · `whitelist` · `private` · `blizzard`
 
 </div>
 
@@ -48,6 +48,7 @@
 <tr><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/text/direct.txt">release/text/direct.txt</a></td><td>~15 000+ CIDR для прямой маршрутизации</td></tr>
 <tr><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/text/whitelist.txt">release/text/whitelist.txt</a></td><td>~4 000+ CIDR белого списка, обязательная категория</td></tr>
 <tr><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/text/private.txt">release/text/private.txt</a></td><td>Приватные адреса</td></tr>
+<tr><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/text/blizzard.txt">release/text/blizzard.txt</a></td><td>IPv4/IPv6 сети Blizzard Entertainment (AS57976)</td></tr>
 </tbody>
 </table>
 
@@ -62,6 +63,7 @@
 <tr><td>direct.mrs</td><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/mihomo/direct.mrs">https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/mihomo/direct.mrs</a></td></tr>
 <tr><td>whitelist.mrs</td><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/mihomo/whitelist.mrs">https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/mihomo/whitelist.mrs</a></td></tr>
 <tr><td>private.mrs</td><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/mihomo/private.mrs">https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/mihomo/private.mrs</a></td></tr>
+<tr><td>blizzard.mrs</td><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/mihomo/blizzard.mrs">https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/mihomo/blizzard.mrs</a></td></tr>
 </tbody>
 </table>
 
@@ -76,6 +78,7 @@
 <tr><td>direct.srs</td><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/sing-box/direct.srs">https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/sing-box/direct.srs</a></td></tr>
 <tr><td>whitelist.srs</td><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/sing-box/whitelist.srs">https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/sing-box/whitelist.srs</a></td></tr>
 <tr><td>private.srs</td><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/sing-box/private.srs">https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/sing-box/private.srs</a></td></tr>
+<tr><td>blizzard.srs</td><td><a href="https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/sing-box/blizzard.srs">https://cdn.jsdelivr.net/gh/losogudok/freemanvpn-geoip/release/sing-box/blizzard.srs</a></td></tr>
 </tbody>
 </table>
 
@@ -102,6 +105,11 @@
 
 - [russia-whitelist](https://github.com/escapingworm/russia-whitelist) — белый список, CIDR
 - Кастомный CUSTOM-WHITELIST.txt — IP-диапазоны, которые собраны вручную
+
+## 🎮 `geoip:blizzard`
+
+- IPv4 и IPv6 сети Blizzard Entertainment из GeoLite2 ASN для официального [`AS57976`](https://www.blizzard.com/legal/fb62365f-09f8-4cf3-bf41-6562d69e111c/peering-policy)
+- Используется вместе с `geosite:blizzard` для прямой маршрутизации игровых подключений
 
 ---
 
